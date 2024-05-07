@@ -4,8 +4,10 @@ const Sequelize = require('sequelize')
 const db = new Sequelize({
   host: 'localhost',
   dialect: 'sqlite',
-  storage: '.db/database',
+  storage: 'db/database.db',
 })
+
+module.exports = db
 
 db.authenticate()
   .then(() => {
@@ -15,4 +17,10 @@ db.authenticate()
     console.error('Erro ao conectar com o banco de dados:', err)
   })
 
-module.exports = db
+db.sync({ force: false })
+  .then(() => {
+    console.log('Tabelas criadas com sucesso!')
+  })
+  .catch((error) => {
+    console.error('Erro ao criar tabelas:', error)
+  })
