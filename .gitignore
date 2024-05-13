@@ -7,6 +7,10 @@ node_modules/
 # Ignorar arquivos de log
 *.log
 
+# Ignorar banco de dados
+*.db
+*.sqlite
+
 # Ignorar pastas de compilação ou saída
 dist/
 build/
