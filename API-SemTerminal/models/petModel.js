@@ -1,6 +1,6 @@
 // Modelo para Pets
-const Sequelize = require('sequelize')
-const db = require('../db/connection')
+const { Sequelize } = require('sequelize')
+const db = require('../config/database')
 
 const petModel = db.define(
   'Pet',
@@ -9,7 +9,7 @@ const petModel = db.define(
     species: Sequelize.STRING,
     carry: Sequelize.STRING,
     weight: Sequelize.FLOAT,
-    date_of_birth: Sequelize.INTEGER,
+    date_of_birth: Sequelize.DATEONLY,
     tutorId: {
       type: Sequelize.INTEGER,
       references: {
@@ -20,6 +20,7 @@ const petModel = db.define(
   },
   {
     tableName: 'Pets',
+    timestamps: false,
   }
 )
 
