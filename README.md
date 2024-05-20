@@ -82,7 +82,7 @@ Com os seguintes modelos, é possível realizar a requisição POST ou PUT com o
 	"carry": "X",
 	"weight": x.x,
 	"date_of_birth": "YYYY/MM/DD XX:XX",
-	"tutorId": X
+	"tutorId": ""
     }
     ```
 
