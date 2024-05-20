@@ -11,12 +11,13 @@ Este projeto é uma aplicação de gerenciamento de clínicas veterinárias. Ela
 - [Uso da API](#uso-da-api)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
+- [Modelos de Requisição JSON](#modelos-de-requisição-json)
 
 ## Requisitos
 
 - [Node.js](https://nodejs.org/) (versão 14 ou superior)
 - [Git](https://git-scm.com/) para clonar o projeto
-- Um banco de dados (como [MySQL](https://www.mysql.com/) ou [PostgreSQL](https://www.postgresql.org/)) configurado e em funcionamento
+- Para manuseio ou acompanhamento do banco de dados, pode ser usado o "DB Browser for SQLite"
 
 ## Instalação
 
@@ -33,26 +34,16 @@ Este projeto é uma aplicação de gerenciamento de clínicas veterinárias. Ela
 
 ## Configuração
 
-1. **Banco de dados**:
-    - Certifique-se de que o banco de dados está em execução.
-    - Edite o arquivo `.env` para adicionar suas configurações de banco de dados (como `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASS`, `DB_NAME`).
-
-2. **Outras configurações**:
-    - Verifique o arquivo `.env` para outras configurações, como variáveis de ambiente necessárias.
+- **Banco de dados**:
+    - Crie um arquivo novo, chamado `.env`, e copie os dados do arquivo `env.example` para ele. Após isso, configure as variáveis.
 
 ## Execução
 
-1. **Rodar migrações**:
-    - Antes de iniciar o servidor, você pode precisar executar migrações de banco de dados para garantir que as tabelas estejam configuradas corretamente.
-    ```bash
-    npm run migrate
-    ```
-
-2. **Iniciar o servidor**:
-    - Para iniciar o servidor, use o comando:
-    ```bash
-    npm start
-    ```
+- **Iniciar o servidor**:
+    - Para iniciar o servidor, use o seguinte comando, dentro da pasta `ProjetoVetClinic-1DesafioUOL`:
+    	```bash
+    	npm run start
+    	```
 
 ## Uso da API
 
@@ -65,6 +56,35 @@ A API segue o padrão REST. Aqui estão algumas rotas básicas que você pode us
 - `POST /pet/:tutorId`: Cria um pet e o associa a um tutor.
 - `PUT /pet/:petId/tutor/:tutorId`: Atualiza a informação de um pet.
 - `DELETE /pet/:petId/tutor/:tutorId`: Remove um pet de um tutor.
+
+Um exemplo de requisição PUT do Pet, seria: `http://localhost:3000/pet/3/tutor/2`
+
+## Modelos de Requisição JSON
+
+Com os seguintes modelos, é possível realizar a requisição POST ou PUT com o body na opção `'raw'`. O código aceita também no modelo `'x-www-form-urlencoded'`.
+
+1. Modelo para o Tutor:
+    ```bash
+    {
+	"name": "Xxxxx",
+	"phone": "+xxxxxxxxxxxxx",
+	"email": "xxxx@xxx.xxx.xx",
+	"date_of_birth": "YYYY/MM/DD XX:XX",
+	"zip_code": "xxxxxxx"
+    }
+    ```
+
+2. Modelo para o Pet:
+    ```bash
+    {
+	"name": "Xxxxx",
+	"species": "Xxxxx",
+	"carry": "X",
+	"weight": x.x,
+	"date_of_birth": "YYYY/MM/DD XX:XX",
+	"tutorId": X
+    }
+    ```
 
 ## Contribuições
 
