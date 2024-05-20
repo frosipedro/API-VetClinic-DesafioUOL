@@ -1,0 +1,20 @@
+{
+  "name": "projetovetclinic-1desafiouol",
+  "version": "2.0.0",
+  "description": "Criação de uma API REST, com algumas funcionalidades, para uma clínica veterinária.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Pedro Frosi, frosipedro, pedro.frosi@sou.unijui.edu.br",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

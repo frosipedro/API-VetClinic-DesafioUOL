@@ -1,30 +1,36 @@
 // Modelo para Pets
 const Sequelize = require('sequelize')
-const db = require('../db/connection')
+const db = require('../config/database.js')
+const tutorModel = require('./tutorModel.js')
 
 const petModel = db.define(
   'Pet',
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     name: Sequelize.STRING,
     species: Sequelize.STRING,
     carry: Sequelize.STRING,
     weight: Sequelize.FLOAT,
-    date_of_birth: Sequelize.INTEGER,
+    date_of_birth: Sequelize.DATE,
     tutorId: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'Tutor',
+        model: 'Tutors',
         key: 'id',
       },
     },
   },
   {
     tableName: 'Pets',
+    timestamps: false,
   }
 )
 
 // Estabelecendo relacionamento entre modelos
-const tutorModel = require('./tutorModel')
 tutorModel.hasMany(petModel, {
   foreignKey: 'tutorId',
   as: 'pets',

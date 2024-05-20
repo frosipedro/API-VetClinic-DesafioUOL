@@ -1,5 +1,6 @@
 # Ignorar a pasta node_modules
 node_modules/
+db/
 
 # Ignorar arquivos de ambiente
 *.env
@@ -7,6 +8,5 @@ node_modules/
 # Ignorar arquivos de log
 *.log
 
-# Ignorar pastas de compilação ou saída
-dist/
-build/
+# Ignorar arquivo README
+*.md
