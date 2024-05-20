@@ -22,28 +22,29 @@ Este projeto é uma aplicação de gerenciamento de clínicas veterinárias. Ela
 ## Instalação
 
 1. Clone o repositório para sua máquina local:
-    ```bash
-    git clone https://github.com/frosipedro/ProjetoVetClinic-1DesafioUOL
-    cd ProjetoVetClinic
-    ```
+
+   ```bash
+   git clone https://github.com/frosipedro/ProjetoVetClinic-1DesafioUOL
+   cd ProjetoVetClinic
+   ```
 
 2. Instale as dependências necessárias usando o Node.js:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 ## Configuração
 
 - **Banco de dados**:
-    - Crie um arquivo novo, chamado `.env`, e copie os dados do arquivo `env.example` para ele. Após isso, configure as variáveis.
+  - Crie um arquivo novo, chamado `.env`, e copie os dados do arquivo `env.example` para ele. Após isso, configure as variáveis.
 
 ## Execução
 
 - **Iniciar o servidor**:
-    - Para iniciar o servidor, use o seguinte comando, dentro da pasta `ProjetoVetClinic-1DesafioUOL`:
-    	```bash
-    	npm run start
-    	```
+  - Para iniciar o servidor, use o seguinte comando, dentro da pasta `ProjetoVetClinic-1DesafioUOL`:
+    ```bash
+    npm run start
+    ```
 
 ## Uso da API
 
@@ -64,27 +65,28 @@ Um exemplo de requisição PUT do Pet, seria: `http://localhost:3000/pet/3/tutor
 Com os seguintes modelos, é possível realizar a requisição POST ou PUT com o body na opção `'raw'`. O código aceita também no modelo `'x-www-form-urlencoded'`.
 
 1. Modelo para o Tutor:
-    ```bash
-    {
-	"name": "Xxxxx",
-	"phone": "+xxxxxxxxxxxxx",
-	"email": "xxxx@xxx.xxx.xx",
-	"date_of_birth": "YYYY/MM/DD XX:XX",
-	"zip_code": "xxxxxxx"
-    }
-    ```
+
+   ```bash
+   {
+   "name": "Xxxxx",
+   "phone": "+xxxxxxxxxxxxx",
+   "email": "xxxx@xxx.xxx.xx",
+   "date_of_birth": "YYYY/MM/DD XX:XX",
+   "zip_code": "xxxxxxx"
+   }
+   ```
 
 2. Modelo para o Pet:
-    ```bash
-    {
-	"name": "Xxxxx",
-	"species": "Xxxxx",
-	"carry": "X",
-	"weight": x.x,
-	"date_of_birth": "YYYY/MM/DD XX:XX",
-	"tutorId": X
-    }
-    ```
+   ```bash
+   {
+   "name": "Xxxxx",
+   "species": "Xxxxx",
+   "carry": "X",
+   "weight": x.x,
+   "date_of_birth": "YYYY/MM/DD XX:XX",
+   "tutorId": ""
+   }
+   ```
 
 ## Contribuições
 
@@ -93,4 +95,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
-
